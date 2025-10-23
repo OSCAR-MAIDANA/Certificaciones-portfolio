@@ -1,2 +1,2 @@
-# Certificaciones---portfolio
+# Certificaciones-portfolio
 Portfolio de certificaciones profesionales
