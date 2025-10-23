@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificaciones - Oscar Daniel Maidana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0a66c2 0%, #004182 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            opacity: 0.9;
+            font-size: 0.95em;
+        }
+
+        .category-section {
+            margin-bottom: 50px;
+        }
+
+        .category-header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 30px;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: 0;
+        }
+
+        .category-title {
+            font-size: 1.8em;
+            color: #0a66c2;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 0;
+        }
+
+        .course-card {
+            background: white;
+            padding: 25px 30px;
+            border-bottom: 1px solid #e0e0e0;
+            border-left: 1px solid #e0e0e0;
+            border-right: 1px solid #e0e0e0;
+            transition: all 0.2s ease;
+        }
+
+        .course-card:hover {
+            background: #f8f9fa;
+            transform: translateX(5px);
+        }
+
+        .course-card:last-child {
+            border-radius: 0 0 15px 15px;
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 15px;
+        }
+
+        .course-title {
+            font-size: 1.2em;
+            color: #000;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .hours-badge {
+            background: #0a66c2;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .institution {
+            color: #666;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .date {
+            color: #999;
+            font-size: 0.85em;
+            margin-bottom: 12px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .skill-tag {
+            background: #e8f4f8;
+            color: #0a66c2;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 500;
+            border: 1px solid #d0e8f0;
+        }
+
+        .cert-id {
+            background: #f5f5f5;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.7em;
+            color: #666;
+            font-family: 'Courier New', monospace;
+            margin-top: 10px;
+            word-break: break-all;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .footer-note {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            header, footer {
+                color: #000;
+            }
+            .course-card {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .courses-grid { 
+                grid-template-columns: 1fr;
+            }
+            .stats { gap: 30px; }
+            .course-card {
+                border-left: none;
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Oscar Daniel Maidana</h1>
+            <p class="subtitle">Certificaciones Profesionales</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Certificaciones</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">470+</div>
+                    <div class="stat-label">Horas de Formación</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2025</div>
+                    <div class="stat-label">Actualizado</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Cybersecurity -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2 class="category-title"><span>🔒</span> Ciberseguridad</h2>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">IT Specialist in Cybersecurity</h3>
+                        <span class="hours-badge">Oficial</span>
+                    </div>
+                    <p class="institution">🏆 Certiport / Pearson VUE</p>
+                    <p class="date">Marzo 2025 | Puntuación: 717/700 ✓</p>
+                    <div class="skills">
+                        <span class="skill-tag">Certificación Internacional</span>
+                        <span class="skill-tag">Principios de Seguridad</span>
+                        <span class="skill-tag">Protección de Red</span>
+                        <span class="skill-tag">Vulnerabilidades</span>
+                    </div>
+                    <div class="cert-id">ID: ITS-47337632</div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Informática Forense y Ciberseguridad</h3>
+                        <span class="hours-badge">60h</span>
+                    </div>
+                    <p class="institution">🏢 Mainjobs Internacional / EIE</p>
+                    <p class="date">Feb - Mar 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Análisis Forense</span>
+                        <span class="skill-tag">Cadena de Custodia</span>
+                        <span class="skill-tag">Dispositivos Móviles</span>
+                        <span class="skill-tag">Evidencia Digital</span>
+                        <span class="skill-tag">Autopsy</span>
+                        <span class="skill-tag">Wireshark</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Ciberseguridad Avanzada en Entornos OT</h3>
+                        <span class="hours-badge">120h</span>
+                    </div>
+                    <p class="institution">🏢 Mainjobs Internacional</p>
+                    <p class="date">Nov 2024 - Ene 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">OT Security</span>
+                        <span class="skill-tag">SCADA/ICS</span>
+                        <span class="skill-tag">Tecnologías de Operación</span>
+                        <span class="skill-tag">Ciberseguridad Industrial</span>
+                    </div>
+                    <div class="cert-id">Exp: F230001MC-IFCT0050</div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Seguridad Digital Básica</h3>
+                        <span class="hours-badge">60h</span>
+                    </div>
+                    <p class="institution">🏢 Dabo Formación</p>
+                    <p class="date">Ene - Mar 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Gestión de Riesgos</span>
+                        <span class="skill-tag">RGPD</span>
+                        <span class="skill-tag">Salvaguardas</span>
+                        <span class="skill-tag">Protocolos Seguros</span>
+                    </div>
+                    <div class="cert-id">IFCT0087 - Exp: F240016MC</div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Auditorías de Sistemas - Detección de Fallos</h3>
+                        <span class="hours-badge">11.5h</span>
+                    </div>
+                    <p class="institution">📚 Udemy</p>
+                    <p class="date">Abril 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Auditoría de Sistemas</span>
+                        <span class="skill-tag">Testing de Seguridad</span>
+                        <span class="skill-tag">Detección de Vulnerabilidades</span>
+                    </div>
+                    <div class="cert-id">UC-1c1ce5b6-ac06-41ff-901f-0f72c15d3cbc</div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">ISO 27000 y Estándares de Seguridad</h3>
+                        <span class="hours-badge">48min</span>
+                    </div>
+                    <p class="institution">💼 LinkedIn Learning</p>
+                    <p class="date">Marzo 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">ISO 27001</span>
+                        <span class="skill-tag">SGSI</span>
+                        <span class="skill-tag">Normativas</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">MITRE ATT&CK Framework</h3>
+                        <span class="hours-badge">1h 28min</span>
+                    </div>
+                    <p class="institution">💼 LinkedIn Learning</p>
+                    <p class="date">Marzo 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Threat Intelligence</span>
+                        <span class="skill-tag">TTPs</span>
+                        <span class="skill-tag">Análisis de Adversarios</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Panorámica de Amenazas a la Ciberseguridad</h3>
+                        <span class="hours-badge">1h</span>
+                    </div>
+                    <p class="institution">💼 LinkedIn Learning</p>
+                    <p class="date">Marzo 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Gestión de Riesgos IT</span>
+                        <span class="skill-tag">Análisis de Amenazas</span>
+                        <span class="skill-tag">PMI PDUs: 1.00</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Herramientas y Monitoreo - Gestión de Incidentes</h3>
+                        <span class="hours-badge">1h 13min</span>
+                    </div>
+                    <p class="institution">💼 LinkedIn Learning</p>
+                    <p class="date">Marzo 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">SIEM</span>
+                        <span class="skill-tag">SOC</span>
+                        <span class="skill-tag">Supervisión de Seguridad</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Implementar Procesos de Gestión de Incidentes</h3>
+                        <span class="hours-badge">1h 16min</span>
+                    </div>
+                    <p class="institution">💼 LinkedIn Learning</p>
+                    <p class="date">Marzo 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Incident Response</span>
+                        <span class="skill-tag">Playbooks</span>
+                        <span class="skill-tag">Implementación</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Concienciación en Ciberseguridad - Terminología</h3>
+                        <span class="hours-badge">44min</span>
+                    </div>
+                    <p class="institution">💼 LinkedIn Learning</p>
+                    <p class="date">Marzo 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Security Awareness</span>
+                        <span class="skill-tag">Fundamentos</span>
+                        <span class="skill-tag">Terminología</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Programming -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2 class="category-title"><span>💻</span> Programación y Desarrollo</h2>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Carrera Desarrollo Frontend React</h3>
+                        <span class="hours-badge">~200h</span>
+                    </div>
+                    <p class="institution">🎓 CoderHouse</p>
+                    <p class="date">Dic 2022 (26 semanas)</p>
+                    <div class="skills">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Frontend</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">TOP 10</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Desarrollo Web</h3>
+                        <span class="hours-badge">38h</span>
+                    </div>
+                    <p class="institution">🎓 CoderHouse</p>
+                    <p class="date">Ago 2022 (10 semanas)</p>
+                    <div class="skills">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">JavaScript</h3>
+                        <span class="hours-badge">34h</span>
+                    </div>
+                    <p class="institution">🎓 CoderHouse</p>
+                    <p class="date">Oct 2022 (9 semanas)</p>
+                    <div class="skills">
+                        <span class="skill-tag">JavaScript ES6+</span>
+                        <span class="skill-tag">DOM</span>
+                        <span class="skill-tag">Async/Await</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">React JS</h3>
+                        <span class="hours-badge">28h</span>
+                    </div>
+                    <p class="institution">🎓 CoderHouse (CLARA)</p>
+                    <p class="date">Dic 2022 (7 semanas)</p>
+                    <div class="skills">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Hooks</span>
+                        <span class="skill-tag">Components</span>
+                        <span class="skill-tag">State Management</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Python Esencial</h3>
+                        <span class="hours-badge">2h 28min</span>
+                    </div>
+                    <p class="institution">💼 LinkedIn Learning</p>
+                    <p class="date">Marzo 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Python 3.8</span>
+                        <span class="skill-tag">Fundamentos</span>
+                        <span class="skill-tag">OOP</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Python: Errores Comunes y Soluciones</h3>
+                        <span class="hours-badge">1h 37min</span>
+                    </div>
+                    <p class="institution">💼 LinkedIn Learning</p>
+                    <p class="date">Marzo 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Debugging</span>
+                        <span class="skill-tag">Best Practices</span>
+                        <span class="skill-tag">Error Handling</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Python</h3>
+                        <span class="hours-badge">8h</span>
+                    </div>
+                    <p class="institution">🏦 Santander Open Academy</p>
+                    <p class="date">Feb 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Anaconda</span>
+                        <span class="skill-tag">Jupyter</span>
+                        <span class="skill-tag">PyCharm</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI & Data -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2 class="category-title"><span>🤖</span> Inteligencia Artificial y Datos</h2>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">IA Generativa</h3>
+                        <span class="hours-badge">8h</span>
+                    </div>
+                    <p class="institution">🎓 MIT Professional Education</p>
+                    <p class="date">Feb 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">GenAI</span>
+                        <span class="skill-tag">LLMs</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">Ética IA</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Introducción a la Ciencia de Datos</h3>
+                        <span class="hours-badge">6h</span>
+                    </div>
+                    <p class="institution">🏢 IE Business School</p>
+                    <p class="date">Feb 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Data Science</span>
+                        <span class="skill-tag">Analytics</span>
+                        <span class="skill-tag">Visualización</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Google: Inteligencia Artificial y Productividad</h3>
+                        <span class="hours-badge">2h</span>
+                    </div>
+                    <p class="institution">🔍 Google</p>
+                    <p class="date">Feb 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">AI Tools</span>
+                        <span class="skill-tag">Productividad</span>
+                        <span class="skill-tag">Automatización</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Fundamentos de ChatGPT</h3>
+                        <span class="hours-badge">8h</span>
+                    </div>
+                    <p class="institution">🏦 Santander Open Academy</p>
+                    <p class="date">Feb 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">ChatGPT</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">NLP</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Microsoft Copilot</h3>
+                        <span class="hours-badge">8h</span>
+                    </div>
+                    <p class="institution">🏦 Santander Open Academy</p>
+                    <p class="date">Feb 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Microsoft Copilot</span>
+                        <span class="skill-tag">Microsoft 365</span>
+                        <span class="skill-tag">Automatización</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Digital Transformation -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2 class="category-title"><span>🚀</span> Transformación Digital</h2>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Transformación Digital</h3>
+                        <span class="hours-badge">8h</span>
+                    </div>
+                    <p class="institution">🎓 MIT Professional Education</p>
+                    <p class="date">Feb 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Digital Strategy</span>
+                        <span class="skill-tag">Innovation</span>
+                        <span class="skill-tag">Change Management</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Internet de las Cosas (IoT)</h3>
+                        <span class="hours-badge">8h</span>
+                    </div>
+                    <p class="institution">🎓 MIT Professional Education</p>
+                    <p class="date">Feb 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">IoT</span>
+                        <span class="skill-tag">Sensores</span>
+                        <span class="skill-tag">Conectividad</span>
+                        <span class="skill-tag">Edge Computing</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">Pensamiento Crítico y Resolución de Problemas</h3>
+                        <span class="hours-badge">8h</span>
+                    </div>
+                    <p class="institution">🏦 Santander Open Academy</p>
+                    <p class="date">Feb 2025</p>
+                    <div class="skills">
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Decision Making</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-note">✓ Todas las certificaciones verificadas y actualizadas a Marzo 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
